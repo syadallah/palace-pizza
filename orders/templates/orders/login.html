@@ -2,12 +2,35 @@
 {% load static %}
 
 <!-- Title -->
-{% block title %} Pinocchio's Pizza & Subs {% endblock %}
+{% block title %} Palace Pizza & Subs {% endblock %}
 
 <!-- JavaScript -->
 {% block js %} <script src="{% static 'js/login.js' %}"></script> {% endblock %}
 
 <!-- Body -->
 {% block body %}
-Login Page
+<!-- Login -->
+    <div id="nav-login" class="col-md-5 py-4">
+      <h5>Login</h5>
+      <form>
+        <input id="username" name="username" type="text" placeholder="Username" required/><br>
+        <input id="password" name="password" type="password" placeholder="Password" required/><br>
+        <button id="submit-login">Login</button>
+      </form>
+      <div class="error-login"></div>
+    </div>
+
+    <!-- Register -->
+    <div id="nav-register" class="col-md-5 ml-md-auto py-4">
+      <h5>New Account</h5>
+      <form>
+        <input id="register-username" name="username" type="text" placeholder="Username" required/><br>
+        <input id="register-password" name="password" type="password" placeholder="Password" required/><br>
+        <input id="register-first-name" name="first_name" type="text" placeholder="First name" required/><br>
+        <input id="register-last-name" name="last_name" type="text" placeholder="Last name" required/><br>
+        <input id="register-email" name="email" type="text" placeholder="Email" required/><br>
+        <button id="submit-register">Register</button>
+      </form>
+      <div class="error-register"></div>
+    </div>
 {% endblock %}
