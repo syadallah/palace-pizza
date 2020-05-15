@@ -11,14 +11,15 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Add python-dotenv to manage local environment variables
-from dotenv import load_dotenv
-load_dotenv()
+#from dotenv import load_dotenv
+#load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -84,6 +85,18 @@ WSGI_APPLICATION = 'pizza.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6fdfo8hvo3eu9',
+        'USER': 'brvnyviopjhhhh',
+        'PASSWORD': '83b0ad462f6425a6bc04e1b064fe898628b5c6c063df20f6d7f8fd14fd6736ad',
+        'HOST': 'ec2-18-235-97-230.compute-1.amazonaws.com',
+        'PORT': '5432'
+    }
+}
+
+DATABASE_URL = 'postgres://brvnyviopjhhhh:83b0ad462f6425a6bc04e1b064fe898628b5c6c063df20f6d7f8fd14fd6736ad@ec2-18-235-97-230.compute-1.amazonaws.com:5432/d6fdfo8hvo3eu9'
 
 
 # Password validation
@@ -121,15 +134,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-  os.path.join(BASE_DIR, 'orders/static/orders'),
-)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#STATICFILES_DIRS = (
+#  os.path.join(BASE_DIR, 'orders/static/orders'),
+#)
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Activate Django-Heroku
-import django_heroku
+
 django_heroku.settings(locals()) # this line has to occur after STATIC_ROOT
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#import dj_database_url
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
