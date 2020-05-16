@@ -6,7 +6,13 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
-    return render(request, "orders/index.html")
+     context = {
+      "user": request.user,
+      "menu": MenuItem.objects.all(),
+      "toppings": serializers.serialize('json', Topping.objects.all()),
+      "extras": serializers.serialize('json', Extra.objects.all()),
+     }
+     return render(request, "orders/index.html", context)
 
 def login_view(request):
   # POST
@@ -71,7 +77,7 @@ def register_view(request):
     user = authenticate(request, username=username, password=password)
     login(request, user)
     return HttpResponse('{"success": true, "message": ""}')
-    
+
     # ============================ LOGOUT ============================================
 
 def logout_view(request):
