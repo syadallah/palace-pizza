@@ -16,5 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
     request.open('POST', '/register');
     const csrf_token = document.querySelector('#csrf').childNodes[0]['value'];
     request.setRequestHeader("X-CSRFToken", csrf_token);
+    
+    // The FormData() object can be used to transmit data to the server (ie.
+     // transmit data to views.py).
+     const register_data = new FormData();
+     register_data.append('username', username);
+     register_data.append('password', password);
+     register_data.append('first_name', first_name);
+     register_data.append('last_name', last_name);
+     register_data.append('email', email);
  };
 });
