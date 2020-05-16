@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 def index(request):
     return render(request, "orders/index.html")
-    
+
 def login_view(request):
   # POST
   if request.method == 'POST':
@@ -34,7 +34,6 @@ def login_view(request):
     context = {
       "menu": MenuItem.objects.all(),
       "toppings": serializers.serialize('json', Topping.objects.all()),
-      "extras": serializers.serialize('json', Extra.objects.all()),
     }
     # print('===== LOGIN ===== context: ', context)
     return render(request, "orders/login.html", context)
