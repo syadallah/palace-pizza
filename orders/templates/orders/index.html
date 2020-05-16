@@ -9,5 +9,16 @@
 {% block js %} <script src="{% static 'js/index.js' %}"></script> {% endblock %}
 <!-- Body -->
 {% block body %}
-Palace Pizza
+<!-- Heading -->
+<div class="container nav-header">
+
+  <!-- Heading - Welcome <username>, Logout -->
+  <div class="row my-3">
+    <div class="col-6">
+      <strong>Welcome, <span id="user">{{ user.username }}</span>!</strong>
+    </div>
+    <div class="col-6 text-right">
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
 {% endblock %}
