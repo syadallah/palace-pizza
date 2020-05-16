@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from orders.models import MenuItem, Topping
+from orders.models import MenuItem, Topping, Extra
 from django.core import serializers
 from django.contrib.auth.models import User
 
