@@ -40,3 +40,10 @@ def register_view(request):
     user.first_name = first_name
     user.last_name = last_name
     user.save()
+    
+      # Django built-in username & password authentication + login session -- by
+    # logging the user in, request.user.is_authenticated == True in the
+    # def index(request): route.
+    user = authenticate(request, username=username, password=password)
+    login(request, user)
+    return HttpResponse('{"success": true, "message": ""}')

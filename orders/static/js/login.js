@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
      register_data.append('last_name', last_name);
      register_data.append('email', email);
      console.log(register_data)
-     
+
      // Send register_data (aka FormData()) to views.py, followed by a callback
      // function that executes once a response is received from views.py.
      request.send(register_data);
@@ -34,5 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
        const response = request.responseText;
        const success = JSON.parse(response)['success'];
        const error_message = JSON.parse(response)['message'];
- };
+       // If views.py returns a JSON response where success = true, then
+       // If views.py returns a JSON response where success = true, then
+       // the page is reloaded in order to redirect the user to index.html.
+       if (success === true) {
+         window.location.href = '/';
+       } else {
+         document.querySelector('.error-register').innerHTML = error_message;
+       }
+     };
+
+     // Disable the default page reload after a POST request.
+     return false;
+
+   // Return an error message if any of the fields were left blank.
+   } else {
+     document.querySelector('.error-register').innerHTML = 'All fields are required.'
+   };
 });
