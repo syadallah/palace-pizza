@@ -34,5 +34,144 @@
     </div>
   </div>
 </div>
+<!-- Wrap the menu in a standard Bootstrap container w/side margins -->
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 menu-login">
+        <table>
+
+          <!-- Regular Pizza -->
+          <tr>
+            <td><strong>Regular Pizza</strong></td>
+            <td>Small</td>
+            <td>Large</td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Regular Pizza' %}
+              <tr id="{{ item.group }} + {{ item.item }}">
+                <td>{{ item.item }}</td>
+                <td>{{ item.price_sm }}</td>
+                <td>{{ item.price_lg }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr><td colspan=3><hr></td></tr>
+
+          <!-- Sicialian Pizza -->
+          <tr>
+            <td><strong>Sicilian Pizza</strong></td>
+            <td>Small</td>
+            <td>Large</td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Sicilian Pizza' %}
+            <tr id="{{ item.group }} + {{ item.item }}">
+              <td>{{ item.item }}</td>
+              <td>{{ item.price_sm }}</td>
+              <td>{{ item.price_lg }}</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr><td colspan=3><hr></td></tr>
+
+          <!-- Pasta -->
+          <tr>
+            <td><strong>Pasta</strong></td>
+            <td></td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Pasta' %}
+              <tr>
+                <td>{{ item.item }}</td>
+                <td>{{ item.price }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr><td colspan=3><hr></td></tr>
+
+          <!-- Salads -->
+          <tr>
+            <td><strong>Salads</strong></td>
+            <td></td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Salads' %}
+            <tr>
+              <td>{{ item.item }}</td>
+              <td>{{ item.price }}</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr><td colspan=3><hr></td></tr>
+
+        </table>
+      </div>
+
+      <div class="col-md-6 menu-login">
+        <table>
+
+          <!-- Subs -->
+          <tr>
+            <td><strong>Subs</strong></td>
+            <td>Small</td>
+            <td>Large</td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Subs' and item.item != 'Sausage, Peppers & Onions' and item.item != 'Steak + Cheese' %}
+            <tr id="{{ item.group }} + {{ item.item }}">
+                <td>{{ item.item }}</td>
+                <td>{{ item.price_sm }}</td>
+                <td>{{ item.price_lg }} </td>
+              </tr>
+            {% elif item.group == 'Subs' and item.item == 'Steak + Cheese' %}
+            <tr id="{{ item.group }} + {{ item.item }}">
+              <td>{{ item.item }} *</td>
+              <td>{{ item.price_sm }}</td>
+              <td>{{ item.price_lg }} </td>
+            </tr>
+            {% elif item.group == 'Subs' and item.item == 'Sausage, Peppers & Onions' %}
+              <tr id="{{ item.group }} + {{ item.item }}">
+                <td>{{ item.item }}</td>
+                <td></td>
+                <td>{{ item.price_lg }} </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+          <tr>
+            <td colspan=3>* add Mushrooms, Green Peppers, or Onions for +0.50</td>
+          </tr>
+          <tr>
+            <td colspan=3>** add Extra Cheese to any sub for +0.50</td>
+          </tr>
+
+          <tr><td colspan=3><hr></td></tr>
+
+          <!-- Dinner Platters -->
+          <tr>
+            <td><strong>Dinner Platters</strong></td>
+            <td>Small</td>
+            <td>Large</td>
+          </tr>
+          {% for item in menu %}
+            {% if item.group == 'Dinner Platters' %}
+            <tr>
+              <td>{{ item.item }}</td>
+              <td>{{ item.price_sm }}</td>
+              <td>{{ item.price_lg }}</td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+
+          <tr><td colspan=3><hr></td></tr>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
 
 {% endblock %}
