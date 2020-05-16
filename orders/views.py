@@ -71,3 +71,9 @@ def register_view(request):
     user = authenticate(request, username=username, password=password)
     login(request, user)
     return HttpResponse('{"success": true, "message": ""}')
+    
+    # ============================ LOGOUT ============================================
+
+def logout_view(request):
+  logout(request)
+  return render(request, "orders/logout.html", {"message": "Logged out."})
