@@ -34,4 +34,11 @@ for (let j = 0; j < localStorage.length; j++) {
 
 document.querySelector('#total_price').append(total_price);
 document.querySelector('#number-of-items-ordered').innerHTML = items_ordered_count;
+
+// Creatr checkboc for topping and Extra
+
+function create_checkbox(price) {
+   const checkbox = document.createElement('input');
+   checkbox.setAttribute("data-price", price);
+   checkbox.type = 'checkbox';
 }
