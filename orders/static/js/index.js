@@ -37,10 +37,10 @@ document.querySelector('#number-of-items-ordered').innerHTML = items_ordered_cou
 
 // Creatr checkboc for topping and Extra
 
-function create_checkbox(price) {
+function create_checkbox(tr_id, name, limit, price, size) {
    const checkbox = document.createElement('input');
    checkbox.className = tr_id;
-
+  checkbox.name = name;
    checkbox.setAttribute("data-price", price);
    checkbox.type = 'checkbox';
 
@@ -54,6 +54,30 @@ checkbox.onclick = function() {
       count++;
     };
   };
+  // Disable all other checkboxes if a limit exists (3rd parameter)
+  if (count === limit) {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].checked !== true) {
+        list[i].disabled = true;
+      };
+    };
+  } else {
+    for (let i = 0; i < list.length; i++) {
+      list[i].disabled = false;
+    };
+  };
 
-
+  // Add the currently selected item to the 'selections' <div> in the DOM
+  // (the 'selections' <div> acts as a sort of staging area for currently
+  // selected items).
+  selections();
+  };
+ return checkbox;
+};
+function create_list(name) {
+  const li = document.createElement('li');
+  li.name = name
+  li.innerHTML = name;
+  return li;
+}
 }
