@@ -5,4 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
    storage = document.querySelector('#storage');
    storage_extras = storage.getAttribute('data-storage_extras');
    storage_toppings = storage.getAttribute('data-storage_toppings');
+
+   // Attach 'click' event listeners to all <input> checkboxes on page load
+inputs = document.querySelectorAll('input')
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('click', function() {
+    select_item(this);
+  });
+};
 }
