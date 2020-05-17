@@ -39,6 +39,21 @@ document.querySelector('#number-of-items-ordered').innerHTML = items_ordered_cou
 
 function create_checkbox(price) {
    const checkbox = document.createElement('input');
+   checkbox.className = tr_id;
+
    checkbox.setAttribute("data-price", price);
    checkbox.type = 'checkbox';
+
+// The onclick function for each checkbox updates the count for the total
+// number of checkboxes selected.
+checkbox.onclick = function() {
+  let count = 0;
+  list = document.getElementsByClassName(tr_id);
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].checked === true) {
+      count++;
+    };
+  };
+
+
 }
