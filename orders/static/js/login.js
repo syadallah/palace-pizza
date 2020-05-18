@@ -12,20 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize POST request, extract the CSRF value from the index.html DOM,
     // and put that into the header of the POST request.
-    const request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.open('POST', '/register');
     const csrf_token = document.querySelector('#csrf').childNodes[0]['value'];
     request.setRequestHeader("X-CSRFToken", csrf_token);
     console.log(csrf_token)
     // The FormData() object can be used to transmit data to the server (ie.
      // transmit data to views.py).
-     const register_data = new FormData();
+     let register_data = new FormData();
      register_data.append('username', username);
      register_data.append('password', password);
      register_data.append('first_name', first_name);
      register_data.append('last_name', last_name);
      register_data.append('email', email);
-     console.log(register_data)
+     console.log(email)
+
+     console.log(register_data.email)
 
      // Send register_data (aka FormData()) to views.py, followed by a callback
      // function that executes once a response is received from views.py.
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
    } else {
      document.querySelector('.error-register').innerHTML = 'All fields are required.'
    };
+ };
    // ==================== LOGIN ==================================================
 
  document.querySelector('#submit-login').onclick = () => {
@@ -98,4 +101,19 @@ document.addEventListener('DOMContentLoaded', function() {
      document.querySelector('.error-login').innerHTML = 'Both username and password are required.'
    };
  };
+ // ==================== EXTRAS & TOPPINGS =====================================
+
+// Retrieve extras and toppings items data from the storage <div>, which holds
+// the data in the form of strings.
+const storage = document.querySelector('#storage');
+const storage_extras = storage.getAttribute('data-storage_extras');
+const storage_toppings = storage.getAttribute('data-storage_toppings');
+
+// Parse the storage_toppings string and grab the names of the individual
+// extras & toppings, then insert them into the DOM as csv strings (0 is falsey).
+toppings = JSON.parse(storage_toppings);
+toppings.forEach(i => {
+  topping = i['fields']['item'];
+  document.querySelector('.login-toppings').innerHTML += (toppings.indexOf(i) ? ', ' : '') + topping;
+})
 });

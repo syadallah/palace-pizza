@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Set width of price columns on the menu
-td_all = document.querySelectorAll('td');
-td_all.forEach(td => {
-  if (td.innerHTML === 'Small') {
-    td.style.width = '100px'
-  } else if (td.innerHTML === 'Large') {
-    td.style.width = '100px'
-  }
-})
-
-// Reloads page if user hits the "Back" button
-// https://stackoverflow.com/questions/20899274/how-to-refresh-page-on-back-button-click
-if(!!window.performance && window.performance.navigation.type === 2) {
-  window.location.reload();
-}
-
   // Retrieve extras and toppings items data from 'storage' <div> (just some
    // random <div> with id='storage') within index.html's DOM. The data is stored
    // as strings that get serialized in views.py before ending up in the DOM.
@@ -96,4 +80,4 @@ function create_list(name) {
   li.innerHTML = name;
   return li;
 }
-}
+})
