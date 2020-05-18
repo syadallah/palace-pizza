@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#submit-register').onclick = () => {
       // Ensure that all registration information was entered
-    const username = document.querySelector('#register-username').value;
-    const password = document.querySelector('#register-password').value;
-    const first_name = document.querySelector('#register-first-name').value;
-    const last_name = document.querySelector('#register-last-name').value;
-    const email = document.querySelector('#register-email').value;
+    const username = $('#register-username').value;
+    const password = $('#register-password').value;
+    const first_name = $('#register-first-name').value;
+    const last_name = $('#register-last-name').value;
+    const email = $('#register-email').value;
     if (username !== '' && password !== '' && first_name !== '' && last_name !== '' && email !== '') {
 
     // Initialize POST request, extract the CSRF value from the index.html DOM,
