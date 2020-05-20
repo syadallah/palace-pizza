@@ -1,0 +1,52 @@
+{% extends "orders/base.html" %}
+{% load static %}
+
+<!-- Title -->
+{% block title %} Pinocchio's Pizza & Subs {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/orders.js' %}"></script> {% endblock %}
+
+<!-- Body -->
+{% block body %}
+
+<!-- Heading -->
+<div class="container nav-header">
+
+  <!-- Heading - Welcome <username>, Logout -->
+  <div class="row my-3">
+    <div class="col-6">
+      <strong>Welcome, <span id="user">{{ user.username }}</span>!</strong>
+    </div>
+    <div class="col-6 text-right">
+      <a href="{% url 'logout' %}">Logout</a>
+    </div>
+  </div>
+
+  <!-- Heading - Back to Menu, Place Order -->
+  <div class="row mb-4">
+    <div class="col-6">
+      <form class="nav-order-links" action="{% url 'index' %}" method="get">
+        <button class="nav-button">
+          <strong>&lt;</strong>
+        </button>
+        <button class="button-transparent nav-text">Back to Menu</button>
+      </form>
+    </div>
+
+    <div class="col-6 text-right place-order-div">
+    </div>
+  </div>
+</div>
+
+<!-- Display Order -->
+<div class="container orders my-5">
+  <div id="display_orders"></div>
+  <span id="total_price"></span><br>
+  <div class="nav-order-links clear-order-div"></div>
+</div>
+
+<!-- CSRF -->
+<span id="csrf">{% csrf_token %}</span>
+
+{% endblock %}

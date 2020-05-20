@@ -30,12 +30,18 @@
         <span class="nav-text">Add to Order</span>
       </div>
       <div class="error-selections"></div>
-    </div>
-    <div class="col-6 text-right">
+    </div>  <div class="col-6 text-right">
+      <form class="nav-order-links" action="{% url 'orders' %}" method="get">
+        <button class="nav-button">
+          <span id="number-of-items-ordered">
+            &nbsp; <!-- The &nbsp; is a placeholder for aesthetic reasons -->
+          </span>
+        </button>
         <button class="button-transparent nav-text">Checkout</button>
+      </form>
     </div>
   </div>
-</div>
+
 <!-- Wrap the menu in a standard Bootstrap container w/side margins -->
 <div class="container">
   <div class="row no-gutters">
