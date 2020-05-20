@@ -26,7 +26,7 @@ if(!!window.performance && window.performance.navigation.type === 2) {
 inputs = document.querySelectorAll('input')
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('click' => {
-    select_item(inputs[i]);
+    select_item(this);
   });
 };
 // Create list to keep track of active menu item selections, initialize total
