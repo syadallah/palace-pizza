@@ -1,0 +1,36 @@
+{% extends "orders/base.html" %}
+{% load static %}
+
+<!-- Title -->
+{% block title %} Pinocchio's Pizzas & Subs {% endblock %}
+
+<!-- JavaScript -->
+{% block js %} <script src="{% static 'js/orders.js' %}"></script> {% endblock %}
+
+<!-- Body -->
+{% block body %}
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="row no-gutters my-4">
+      <div class="col-12 center">
+        <img src="{% static 'img/logo-01a-outline.svg' %}">
+      </div>
+    </div>
+
+    <div class="row no-gutters mb-2">
+      <div class="col-12 center">
+        <h6>You have successfully logged out.</h6>
+      </div>
+    </div>
+
+    <div class="row no-gutters">
+      <div class="col-12 center">
+        <h6>Return to <a href="{% url 'index' %}">Login</a>.</h6>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
