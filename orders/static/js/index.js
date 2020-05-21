@@ -25,7 +25,7 @@ if(!!window.performance && window.performance.navigation.type === 2) {
 // Attach 'click' event listeners to all <input> checkboxes on page load
 inputs = document.querySelectorAll('input')
 for (let i = 0; i < inputs.length; i++) {
-  inputs[i].addEventListener('click' => {
+  inputs[i].addEventListener('click', function() {
     select_item(this);
   });
 };
