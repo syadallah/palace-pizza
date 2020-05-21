@@ -28,29 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i0&iq&e9u9h6(4_7%pt2s9)f=c$kso=k$c$w@fi9215s=1q0^d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = Falsw
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-CORS_REPLACE_HTTPS_REFERER      = True
-HOST_SCHEME                     = "https://"
-SECURE_PROXY_SSL_HEADER         = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT             = True # requires SLL certificate in AWS
-SESSION_COOKIE_SECURE           = True
-CSRF_COOKIE_SECURE              = True
-SECURE_HSTS_PRELOAD             = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
-SECURE_HSTS_SECONDS             = 1000000
-SECURE_FRAME_DENY               = True
-SECURE_CONTENT_TYPE_NOSNIFF     = True
-SECURE_BROWSER_XSS_FILTER       = True
-X_FRAME_OPTIONS                 = 'DENY'
-
-DEBUG = False
-
-ALLOWED_HOSTS = [
-  '*'
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -167,5 +147,5 @@ STATIC_URL = '/static/'
 
 django_heroku.settings(locals()) # this line has to occur after STATIC_ROOT
 
-#import dj_database_url
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
