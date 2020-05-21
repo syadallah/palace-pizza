@@ -22,7 +22,7 @@ if(!!window.performance && window.performance.navigation.type === 2) {
    storage_extras = storage.getAttribute('data-storage_extras');
    storage_toppings = storage.getAttribute('data-storage_toppings');
 
-   // Attach 'click' event listeners to all <input> checkboxes on page load
+// Attach 'click' event listeners to all <input> checkboxes on page load
 inputs = document.querySelectorAll('input')
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener('click' => {
