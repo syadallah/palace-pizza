@@ -638,4 +638,3 @@ for (let i = 0; i < temp_array.length; i++) {
   localStorage.setItem(i, temp_array[i]);
 }
 }
-})
