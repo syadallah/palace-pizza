@@ -29,6 +29,7 @@ for (let i = 0; i < inputs.length; i++) {
     select_item(this);
   });
 };
+
 // Create list to keep track of active menu item selections, initialize total
 // price, initialize the total number of items that have been ordered (ie. the
 // number of items in the shopping cart), go through localStorage and actually
