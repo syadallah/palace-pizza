@@ -1,3 +1,9 @@
 body {
   background-color: #faf9db;
 }
+input[type='checkbox'] {
+  background-color: green;
+  color: blue;
+  margin: 0;
+  padding: 0;
+}
