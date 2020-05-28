@@ -79,3 +79,123 @@ input[type='checkbox'] {
     padding: 0 10%;
   }
 }
+#navbarHeader button, .navbar button, #place-order {
+  background-color: #437738;
+  border: 2px solid #faf9db;
+  border-radius: 5px;
+  color: #faf9db;
+  font-weight: bold;
+  padding: 5px 15px;
+}
+
+#navbarHeader button:hover, .navbar button:hover, #place-order:hover {
+  background-color: #a51d21;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#navbarHeader button:focus, .navbar button:focus, #place-order:focus {
+  outline: none;
+}
+
+#navbarHeader {
+  background-color: #faf9db;
+  color: #faf9db;
+}
+
+#navbarHeader input {
+  border-color: #a7cc38;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  width: 60%;
+}
+
+#navbarHeader input::-webkit-input-placeholder {
+  color: #437738;
+  font-style: italic;
+}
+
+#navbarHeader input:-ms-input-placeholder {
+  color: #437738;
+  font-style: italic;
+}
+
+#navbarHeader input::-ms-input-placeholder {
+  color: #437738;
+  font-style: italic;
+}
+
+#navbarHeader input::placeholder {
+  color: #437738;
+  font-style: italic;
+}
+
+#navbarHeader input:focus {
+  outline: #a51d21;
+}
+
+.navbar {
+  background-color: #437738;
+  color: #faf9db;
+}
+
+.navbar .container {
+  background-color: #437738;
+}
+
+.nav-order-links > .nav-button {
+  background-color: #a51d21;
+  border: 0;
+  border-radius: 30px;
+  color: #faf9db;
+  height: 30px;
+  padding: 0 0 3px 0;
+  width: 30px;
+}
+
+.nav-order-links > .nav-text {
+  color: #a51d21;
+}
+
+.nav-order-links {
+  display: inline-block;
+}
+
+.nav-order-links:hover .nav-text {
+  color: #a7cc38;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.nav-order-links:hover .nav-button {
+  background-color: #a7cc38;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.nav-header {
+  border-bottom: 6px double #437738;
+  color: #4d3a14;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#nav-login {
+  background-color: #437738;
+  border: 2px solid #a7cc38;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+#nav-register {
+  background-color: #a51d21;
+  border: 2px solid #a7cc38;
+  border-radius: 10px;
+  margin: 20px;
+}
