@@ -1,6 +1,48 @@
 body {
   background-color: #faf9db;
 }
+
+.button-transparent {
+  background-color: #faf9db;
+  border: 0;
+  font-weight: bold;
+  padding: 0;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.clear-order-div {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.clear-order {
+  display: block;
+  margin-left: auto;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.green {
+  background-color: green;
+}
+
+#heading-intro {
+  color: #4d3a14;
+  text-align: center;
+}
+
 input[type='checkbox'] {
   background-color: green;
   color: blue;
