@@ -53,11 +53,11 @@ def register_view(request):
 
   # Grab username & password submitted via POST request and make sure that no
   # fields are empty.
-  username = request.POST["username"]
-  password = request.POST["password"]
-  first_name = request.POST["first_name"]
-  last_name = request.POST["last_name"]
-  email = request.POST["email"]
+  username = request.POST.get('username')
+  password = request.POST.get('password')
+  first_name = request.POST.get('first_name')
+  last_name = request.POST.get('last_name')
+  email = request.POST.get('email')
   if username == '' or password == '' or first_name == '' or last_name == '' or email == '':
     return HttpResponse('{"success": false, "message": "All fields must be completed."}')
     # Try to see if the username already exists in the database; if not, register
