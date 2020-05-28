@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     request.open('POST', '/register');
     const csrf_token = document.querySelector('#csrf').childNodes[0]['value'];
     request.setRequestHeader("X-CSRFToken", csrf_token);
-    console.log(csrf_token)
+
     // The FormData() object can be used to transmit data to the server (ie.
      // transmit data to views.py).
      let register_data = new FormData();
@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
      register_data.append('first_name', first_name);
      register_data.append('last_name', last_name);
      register_data.append('email', email);
-     console.log()
-
-     console.log(register_data.email)
 
      // Send register_data (aka FormData()) to views.py, followed by a callback
      // function that executes once a response is received from views.py.
