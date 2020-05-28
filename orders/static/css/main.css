@@ -260,5 +260,5 @@ input[type='checkbox'] {
   margin-bottom: 0;
   padding-top: var(--jumbotron-padding-y);
   padding-bottom: var(--jumbotron-padding-y);
-  background: url("./static/orders/img/pizza-03.jpg") 50% 0 no-repeat fixed;
+  background: url("../img/pizza-03.jpg") 50% 0 no-repeat fixed;
 }
