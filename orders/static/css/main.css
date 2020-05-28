@@ -256,3 +256,9 @@ input[type='checkbox'] {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+.jumbotron {
+  margin-bottom: 0;
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  background: url("/static/orders/img/pizza-03.jpg") 50% 0 no-repeat fixed;
+}
