@@ -43,9 +43,39 @@ body {
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 input[type='checkbox'] {
   background-color: green;
   color: blue;
   margin: 0;
   padding: 0;
+}
+
+.login-cs50-background {
+  background-color: #faf9db;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.login-toppings-background {
+  border: 6px double #437738;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 767px) {
+  .login-toppings-background {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .menu-login {
+    padding: 0 10%;
+  }
 }
