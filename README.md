@@ -2,7 +2,7 @@
 
 # Description
 
-It is a website built using Django that features the menu for a restaurant called "Pinochio's Pizza & Subs" and allows visitors to create a profile, login, select items from the menu to order, view the total price of the order, and "place" an order. When an order is placed, a record of it is stored in an sqlite3 database (a local database only used for development purposes).
+It is a website built using Django that features the menu for a restaurant called "Palace Pizza & Subs" and allows visitors to create a profile, login, select items from the menu to order, view the total price of the order, and "place" an order. When an order is placed, a record of it is stored in an sqlite3 database (a local database only used for development purposes).
 
 
 # Configuration, Structure - Run Locally
